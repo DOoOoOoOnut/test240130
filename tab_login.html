@@ -67,6 +67,27 @@
                 t.classList.add('active')
             })
         })
+
+        // 2. 에러 메세지 출력
+        // 변수 만들기
+        const error = document.querySelector('.error')
+        const id = document.querySelector('#id')
+        const pw = document.querySelector('#pw')
+        const login_btn = document.querySelector('#login')
+        console.log(error,id,pw,login_btn)
+
+        // 메세지 출력 이벤트 생성
+        login_btn.addEventListener('click',()=>{
+            if(id.value == '' && pw.value == ''){
+                error.innerText = '아이디와 비밀번호를 입력하세요'
+            }else if(id.value == ''){
+                error.innerText = '아이디를 입력하세요'
+            }else if(pw.value == ''){
+                error.innerText = '비밀번호를 입력하세요'
+            }else{
+                alert('로그인 성공하였습니다')
+            }
+        })
     </script>
 </body>
 </html>
